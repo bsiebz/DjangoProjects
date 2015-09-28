@@ -20,7 +20,7 @@ class QuestionViewTests(TestCase):
         """
         If no questions exist, an appropriate message should be displayed.
         """
-        reponse = self.client.get(reverse('polls:index'))
+        response = self.client.get(reverse('polls:index'))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "No polls are available.")
         self.assertQuerysetEqual(
